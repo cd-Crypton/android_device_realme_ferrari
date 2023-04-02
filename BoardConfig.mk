@@ -104,6 +104,7 @@ BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
 BOARD_RAMDISK_USE_LZ4 := true
 TARGET_KERNEL_CONFIG := oplus_gki_defconfig
 TARGET_KERNEL_SOURCE := kernel/$(PRODUCT_BRAND)/$(PRODUCT_DEVICE)
+TARGET_BOARD_KERNEL_HEADERS ?= device/realme/ferrari-prebuilts/kernel-headers
 
 # Kernel Modules
 KERNEL_MODULE_DIR := $(DEVICE_PATH)/modules
