@@ -107,7 +107,7 @@ TARGET_KERNEL_SOURCE := kernel/$(PRODUCT_BRAND)/$(PRODUCT_DEVICE)
 TARGET_KERNEL_NO_GCC := true
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_CLANG_VERSION := r416183b1
-TARGET_BOARD_KERNEL_HEADERS ?= device/realme/ferrari-prebuilts/kernel-headers
+#TARGET_BOARD_KERNEL_HEADERS ?= device/realme/ferrari-prebuilts/kernel-headers
 
 # Kernel Modules
 KERNEL_MODULE_DIR := $(DEVICE_PATH)/modules
