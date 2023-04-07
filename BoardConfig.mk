@@ -100,7 +100,7 @@ BOARD_KERNEL_CMDLINE += \
      bootconfig
 BOARD_BOOTCONFIG += \
      androidboot.hardware=qcom \
-     androidboot.memcg=1
+     androidboot.memcg=1 \
      androidboot.usbcontroller=a600000.dwc3 \
      androidboot.bootdevice=1d84000.ufshc \
      androidboot.force_normal_boot=1
