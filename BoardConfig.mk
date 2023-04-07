@@ -90,12 +90,23 @@ ODM_MANIFEST_FILES := $(DEVICE_PATH)/configs/device/manifest_odm.xml
 
 # Kernel
 BOARD_BOOT_HEADER_VERSION := 4
-BOARD_KERNEL_CMDLINE += video=vfb:640x400,bpp=32,memsize=3072000 msm_geni_serial.con_enabled=0 bootconfig
-BOARD_BOOTCONFIG += androidboot.hardware=qcom androidboot.memcg=1 androidboot.usbcontroller=a600000.dwc3
+BOARD_KERNEL_CMDLINE += \
+     video=vfb:640x400,bpp=32,memsize=3072000 \
+     msm_geni_serial.con_enabled=0 \
+     cgroup.memory=nokmem,nosocket \
+     service_locator.enable=1 \
+     swiotlb=noforce \
+     loop.max_part=7 \
+     bootconfig
+BOARD_BOOTCONFIG += \
+     androidboot.hardware=qcom \
+     androidboot.memcg=1
+     androidboot.usbcontroller=a600000.dwc3 \
+     androidboot.bootdevice=1d84000.ufshc \
+     androidboot.force_normal_boot=1
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_KERNEL_IMAGE_NAME := Image
-BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
 BOARD_RAMDISK_USE_LZ4 := true

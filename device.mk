@@ -22,17 +22,18 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 # A/B
 ENABLE_VIRTUAL_AB := true
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
+PRODUCT_VIRTUAL_AB_COMPRESSION := true
+PRODUCT_VENDOR_PROPERTIES += ro.virtual_ab.compression.enabled=true
 PRODUCT_PACKAGES += \
-    tune2fs.vendor_ramdisk \
-    resize2fs.vendor_ramdisk \
     snapuserd.vendor_ramdisk
     
 # Prj Qouta
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
-# Setup dalvik vm configs
-$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
+# Ramdisk
+#$(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 
+# AB Config
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
