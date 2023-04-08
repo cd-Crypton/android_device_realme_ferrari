@@ -11,8 +11,7 @@ LOCAL_PATH := device/realme/ferrari
 TARGET_KERNEL_VERSION := 5.10
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/kernel:kernel \
-    $(LOCAL_PATH)/prebuilts/dtb.img:dtb.img \
-    $(LOCAL_PATH)/dynamic-remove-oppo:dynamic-remove-oppo
+    $(LOCAL_PATH)/prebuilts/dtb.img:dtb.img
 
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
