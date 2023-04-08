@@ -4,10 +4,12 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-LOCAL_PATH := $(call my-dir)
+ifneq ($(filter ferrari, $(TARGET_DEVICE)),)
 
-ifeq ($(TARGET_DEVICE),ferrari)
-include $(call all-subdir-makefiles,$(LOCAL_PATH))
+$(call add-radio-file,dynamic-remove-oppo)
+
+include $(call all-makefiles-under,$(LOCAL_PATH))
+
 include $(CLEAR_VARS)
 
 # A/B builds require us to create the mount points at compile time.
