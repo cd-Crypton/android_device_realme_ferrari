@@ -8,7 +8,7 @@ ifeq ($(TARGET_DEVICE),ferrari)
 
 $(call add-radio-file,dynamic-remove-oppo)
 
-include $(call all-makefiles-under,$(LOCAL_PATH))
+include $(call all-subdir-makefiles,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)
 
