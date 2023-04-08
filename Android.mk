@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-ifneq ($(filter ferrari, $(TARGET_DEVICE)),)
+ifeq ($(TARGET_DEVICE),ferrari)
 
 $(call add-radio-file,dynamic-remove-oppo)
 
